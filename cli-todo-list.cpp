@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <limits>
 
 using namespace std;
 
@@ -24,6 +25,7 @@ void showTasks(const vector<Task>& tasks) {
 void addTask(vector<Task>& tasks) {
     cout << "Enter a new task: ";
     string desc;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin, desc);
     if (desc.empty()) {
         cout << "Task can't be empty!\n";
